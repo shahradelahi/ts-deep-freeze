@@ -1,6 +1,6 @@
 {
   "name": "@se-oss/deep-freeze",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Recursively freezes objects and arrays to make them immutable, with TypeScript support.",
   "keywords": [
     "deep-freeze",
