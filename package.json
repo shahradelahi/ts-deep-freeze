@@ -1,0 +1,56 @@
+{
+  "name": "@se-oss/deep-freeze",
+  "version": "0.0.0",
+  "description": "Recursively freezes objects and arrays to make them immutable, with TypeScript support.",
+  "keywords": [
+    "deep-freeze",
+    "freeze",
+    "immutable",
+    "typescript",
+    "deep-readonly",
+    "recursive-freeze"
+  ],
+  "homepage": "https://github.com/shahradelahi/ts-deep-freeze",
+  "repository": "github:shahradelahi/ts-deep-freeze",
+  "license": "MIT",
+  "author": "Shahrad Elahi <shahrad@litehex.com> (https://github.com/shahradelahi)",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.cjs"
+    }
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**",
+    "!**/*.d.cts"
+  ],
+  "scripts": {
+    "build": "pnpm typecheck && tsup",
+    "clean": "git clean -dfx \"**/node_modules/**\" dist .tsbuildinfo",
+    "dev": "tsup --watch",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "pnpm typecheck && eslint .",
+    "lint:fix": "eslint --fix .",
+    "prepublishOnly": "pnpm build && pnpm lint && pnpm format:check && pnpm test",
+    "test": "vitest --run",
+    "typecheck": "tsc --noEmit"
+  },
+  "prettier": "@shahrad/prettier-config",
+  "devDependencies": {
+    "@shahrad/eslint-config": "^1.0.1",
+    "@shahrad/prettier-config": "^1.2.2",
+    "@shahrad/tsconfig": "^1.2.0",
+    "@types/node": "^24.7.1",
+    "eslint": "^9.37.0",
+    "globals": "^16.4.0",
+    "prettier": "^3.6.2",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  },
+  "packageManager": "pnpm@10.18.2+sha512.9fb969fa749b3ade6035e0f109f0b8a60b5d08a1a87fdf72e337da90dcc93336e2280ca4e44f2358a649b83c17959e9993e777c2080879f3801e6f0d999ad3dd"
+}
